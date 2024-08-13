@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERDÓNNN</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+        }
+        #p {
+            display: none;
+            font-size: 24px;
+            margin-top: 20px;
+            color: green;
+        }
+        #Si, #No {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #No {
+            background-color: red;
+            color: white;
+        }
+        #Si {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>¿Me perdonas?</h1>
+        <section>
+            <button id="Si">Sí</button>
+            <button id="No">No</button>
+        </section>
+        <p id="p">yap :)</p>
+    </div>
+    
+    <script>
+        // Variables para controlar el tamaño de los botones
+        let siFontSize = 20;  // Tamaño inicial de la fuente del botón "Sí"
+        let noFontSize = 20;  // Tamaño inicial de la fuente del botón "No"
+
+        document.getElementById("Si").addEventListener("click", function() {
+            siFontSize += 5;  // Aumenta el tamaño de la fuente en 5px cada vez que se hace clic en "Sí"
+            this.style.fontSize = siFontSize + "px";
+            this.style.padding = (siFontSize / 2) + "px " + (siFontSize * 1.5) + "px";
+            document.getElementById("p").style.display = "block";  // Muestra el texto "yap :)"
+        });
+
+        document.getElementById("No").addEventListener("click", function() {
+            noFontSize -= 5;  // Reduce el tamaño de la fuente en 5px cada vez que se hace clic en "No"
+            this.style.fontSize = noFontSize + "px";
+            this.style.padding = (noFontSize / 2) + "px " + (noFontSize * 1.5) + "px";
+            
+            // También agranda el botón "Sí"
+            siFontSize += 5;
+            document.getElementById("Si").style.fontSize = siFontSize + "px";
+            document.getElementById("Si").style.padding = (siFontSize / 2) + "px " + (siFontSize * 1.5) + "px";
+        });
+    </script>
+</body>
+</html>
+
